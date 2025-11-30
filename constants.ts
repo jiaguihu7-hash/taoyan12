@@ -31,19 +31,28 @@ export const HEIGHT_SCALES: Record<HeightType, number> = {
 // SVG Paths for features
 export const HAIR_PATHS: Record<HairStyle, string> = {
   bald: '',
-  spiky: 'M-15,-10 L-10,-25 L-5,-15 L0,-28 L5,-15 L10,-25 L15,-10',
+  spiky: 'M-15,-10 Q-18,-20 -10,-30 Q-5,-20 0,-35 Q5,-20 10,-30 Q18,-20 15,-10',  // 卷发样式
   messy: 'M-18,-8 Q-10,-30 0,-25 Q10,-30 18,-8',
   'side-part': 'M-18,-8 Q-10,-25 15,-10 L15,-5',
-  long: 'M-18,-8 Q-25,10 -15,15 M18,-8 Q25,10 15,15 M-18,-8 Q0,-30 18,-8',
+  long: 'M-18,-8 Q-45,10 -15,60 M18,-8 Q50,10 15,60 M-18,-8 Q10,-30 18,-10',
 };
 
 export const BEARD_PATHS: Record<BeardStyle, string> = {
   none: '',
-  stubble: 'M-10,15 L10,15', // Simple logic handles this differently usually, but placeholder
+  stubble: `
+    M-10,15 A1,1 0 1,0 -10.1,15
+    M0,15 A1,1 0 1,0 -0.1,15
+    M10,15 A1,1 0 1,0 10.1,15
+    M-8,20 A1,1 0 1,0 -8.1,20
+    M2,20 A1,1 0 1,0 2.1,20
+    M-6,25 A1,1 0 1,0 -6.1,25
+    M4,25 A1,1 0 1,0 4.1,25
+    M-4,30 A1,1 0 1,0 -4.1,30
+    M6,30 A1,1 0 1,0 6.1,30
+  `,
   goatee: 'M-5,18 L0,25 L5,18',
   full: 'M-15,10 Q0,30 15,10',
 };
-
 export const EYE_PATHS: Record<EyeStyle, { left: string, right: string }> = {
   dots: { left: 'M-8,0 A2,2 0 1,1 -8.1,0', right: 'M8,0 A2,2 0 1,1 7.9,0' }, // Small circles
   angry: { left: 'M-12,-5 L-4,0', right: 'M4,0 L12,-5' },

@@ -28,7 +28,7 @@ const SPLATTER_PATHS = [
 const PRESETS: SavedCharacter[] = [
   {
     id: 'default-1',
-    name: '倒霉蛋',
+    name: '新角色',
     hitCount: 0,
     customMessages: DEFAULT_MESSAGES,
     bodyType: 'normal',
@@ -392,7 +392,7 @@ export default function App() {
                                      className="w-full p-2 border rounded"
                                    >
                                        <option value="bald">光头</option>
-                                       <option value="spiky">刺猬头</option>
+                                       <option value="spiky">卷发</option>
                                        <option value="messy">凌乱</option>
                                        <option value="side-part">分头</option>
                                        <option value="long">长发</option>
@@ -439,7 +439,7 @@ export default function App() {
                            </div>
 
                            <div>
-                               <label className="block text-sm font-bold mb-1">求饶语录 (用回车分隔)</label>
+                               <label className="block text-sm font-bold mb-1">求饶语录 可自定义 (用回车分隔)</label>
                                <textarea
                                    className="w-full p-2 border rounded h-24 text-sm"
                                    value={character.customMessages.join('\n')}
